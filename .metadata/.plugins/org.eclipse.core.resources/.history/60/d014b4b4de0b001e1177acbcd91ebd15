@@ -1,0 +1,7 @@
+package poo;
+
+public interface Trabajadores {
+	// Por convencion no ponemos public abstract
+	double establece_bonus(double gratificacion);
+
+}

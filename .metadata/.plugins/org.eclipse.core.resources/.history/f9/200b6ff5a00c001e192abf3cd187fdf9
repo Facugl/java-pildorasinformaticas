@@ -1,0 +1,33 @@
+package graficos;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.*;
+
+public class CreandoMarcoCentrado {
+
+	public static void main(String[] args) {
+		MarcoCentrado mimarco = new MarcoCentrado();
+		mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mimarco.setVisible(true);
+	}
+
+}
+
+class MarcoCentrado extends JFrame {
+	public MarcoCentrado() {
+		Toolkit mipantalla = Toolkit.getDefaultToolkit();
+		// y ahora obtengo el tamaño de la pantalla principal
+		Dimension sizePantalla = mipantalla.getScreenSize();
+		// ahora ya ppodria consultar width y height
+		int alturaPantalla = sizePantalla.height;
+		int anchoPantalla = sizePantalla.width;
+		
+		// creo un marco con las mitades del ancho y alto de la pantalla
+		setSize(anchoPantalla/2, alturaPantalla/2);
+		
+		// ahora lo centro, en este ejemplo por geometria se divide entre 4
+		setLocation(anchoPantalla/4, alturaPantalla/4);
+	}
+}

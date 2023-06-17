@@ -1,0 +1,19 @@
+package graficos;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class PruebaDibujo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class MarcoConDibujo extends JFrame {
+	// creamos el constructor
+	setTitle("Prueba de dibujo");
+	setSize(400, 400);
+}

@@ -1,0 +1,22 @@
+package graficos;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class PruebaDibujo {
+
+	public static void main(String[] args) {
+		MarcoConDibujo mimarco = new MarcoConDibujo();
+		mimarco.setVisible(true);
+		mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}
+
+class MarcoConDibujo extends JFrame {
+	// creamos el constructor
+	public MarcoConDibujo() {
+		setTitle("Prueba de dibujo");
+		setSize(400, 400);
+	}
+}

@@ -1,0 +1,35 @@
+package poo;
+
+public class Pruebas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Empleados trabajador1 = new Empleados("Paco");		
+		Empleados trabajador2 = new Empleados("Ana");
+		
+		System.out.println(trabajador1.devuelveDatos());
+		System.out.println(trabajador2.devuelveDatos());
+	}
+
+}
+
+class Empleados {
+	
+	public Empleados(String nom) {
+		name = nom;
+		section = "Administracion";
+	}
+	
+	public void changeSection(String section) {
+		this.section = section;
+	}
+	
+	public String devuelveDatos() {
+		return "El nombre es: " + name + " y la seccion es: " + section;
+	}
+	
+	private String name;
+	private String section;
+}
+

@@ -1,0 +1,50 @@
+package poo;
+
+public class Pruebas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Empleados trabajador1 = new Empleados("Paco");		
+		Empleados trabajador2 = new Empleados("Ana");
+		Empleados trabajador3 = new Empleados("Antonio");
+		
+		trabajador1.changeSection("RRHH");
+		// trabajador1.cambiaNombre("Maria");
+		
+		System.out.println(trabajador1.devuelveDatos());
+		Empleados.Id++;
+		System.out.println(trabajador2.devuelveDatos());
+		Empleados.Id++;
+		System.out.println(trabajador3.devuelveDatos());
+	}
+
+}
+
+class Empleados {
+	
+	public Empleados(String nom) {
+		name = nom;
+		section = "Administracion";
+		Id = 1;
+	}
+	
+	public void changeSection(String section) {
+		this.section = section;
+	}
+	
+	/*
+	public void cambiaNombre(String nombre) {
+		this.name = nombre;
+	}
+	*/
+	
+	public String devuelveDatos() {
+		return "El nombre es: " + name + " y la seccion es: " + section + " y el Id es: " + Id;
+	}
+	
+	private final String name;
+	private String section;
+	public static int Id;
+}
+

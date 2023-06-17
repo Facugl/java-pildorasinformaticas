@@ -1,0 +1,20 @@
+package graficos;
+
+import javax.swing.*;;
+
+public class CreandoMarco {
+
+	public static void main(String[] args) {
+		miMarco marco1 = new miMarco();
+		// por defecto es invisible
+		marco1.setVisible(true);
+	}
+
+}
+
+class miMarco extends JFrame {
+	public miMarco() {
+		// por defecto tiene un size de 0x0 pixeles
+		setSize(500, 300);
+	}
+}

@@ -1,0 +1,22 @@
+package graficos;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class EscribiendoEnMarco {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class MarcoConTexto extends JFrame {
+	public MarcoConTexto() {
+		// aca en el constructor le defino visibilidad, tamaño, etc
+		setVisible(true);
+		setSize(600, 450);
+		setLocation(400, 200);
+	}
+}

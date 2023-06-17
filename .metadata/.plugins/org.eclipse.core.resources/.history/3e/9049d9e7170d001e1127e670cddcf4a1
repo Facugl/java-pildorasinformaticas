@@ -1,0 +1,44 @@
+package graficos;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+
+public class PruebaDibujo {
+
+	public static void main(String[] args) {
+		MarcoConDibujo mimarco = new MarcoConDibujo();
+		mimarco.setVisible(true);
+		mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+
+}
+
+class MarcoConDibujo extends JFrame {
+	// creamos el constructor
+	public MarcoConDibujo() {
+		setTitle("Prueba de dibujo");
+		setSize(400, 400);
+		
+		// instanciamos la lamina y la agregamos
+		LaminaConFiguras milamina = new LaminaConFiguras();
+		add(milamina);
+	}
+}
+
+class LaminaConFiguras extends JPanel {
+	// debemos sobre escribir el metodo
+	public void paintComponent(Graphics g) {
+		// primero llamamos al metodo paintComponent de la clase padre
+		super.paintComponents(g);
+		
+		// g.drawRect(50, 50, 200, 200);
+		// g.drawLine(100, 100, 300, 900);
+		// g.drawArc(50, 100, 200, 120, 150, 0);
+		
+		// hago una refundicion o casteo de Graphics a Graphics
+		Graphics2D g2 = (Graphics2D) g;
+		Rectangle2D rectangulo = new Rectangle2D.Double(100, 100, 200, 150);
+	}
+}

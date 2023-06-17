@@ -1,0 +1,75 @@
+package graficos;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
+import java.awt.SystemColor;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.imageio.*;
+
+public class PruebaImagenes {
+
+	public static void main(String[] args) {
+		MarcoImagen mimarco = new MarcoImagen();
+		
+		mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mimarco.setVisible(true);
+		
+	}
+}
+
+class MarcoImagen extends JFrame {
+	public MarcoImagen() {
+		setTitle("Marco con imagen");
+		setBounds(100, 50, 800, 500);		
+		LaminaConImagen milamina = new LaminaConImagen();		
+		add(milamina);
+	}
+}
+
+class LaminaConImagen extends JPanel {
+	public LaminaConImagen() {
+		File miimagen = new File("src/graficos/bola.jpg");
+		try {
+			imagen = ImageIO.read(miimagen);
+		} catch (IOException e) {
+			System.out.println("La imagen no se encuentra");
+		}
+	}
+	
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponents(g);
+		
+		
+		
+		
+		// si no se cuanto mide la imagen, entonces:
+		int anchuraImagen = imagen.getWidth(this); // con this le indico en donde estoy, en la lamina
+		int alturaImagen = imagen.getHeight(this);
+		
+		g.drawImage(imagen, 0, 0, null);
+		
+		for (int i = 0; i < 800; i++) {
+			for (int j = 0; j < 500; j++) {
+				if (i + j >0) {
+					// esto es para que al principio i=0 j=0 no vuelva a colocar na imagen, sino en esas coordenadas habrian dos imagenes
+					g.copyArea(0, 0, anchuraImagen, alturaImagen, anchuraImagen*i, alturaImagen*j);
+				}
+			}
+		}
+		
+		
+	}
+	
+	private Image imagen;
+}

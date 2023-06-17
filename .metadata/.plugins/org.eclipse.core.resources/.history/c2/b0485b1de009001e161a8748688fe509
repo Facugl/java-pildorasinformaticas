@@ -1,0 +1,16 @@
+package PrimerPackage;
+
+public class Manipula_Cadenas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name = "Facundo";
+		
+		System.out.println("Mi nombre es " + name);
+		
+		System.out.println("Mi nombre tiene " + name.length() + "letras.");
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package poo;
+
+import javax.swing.*;
+
+public class Uso_Coche {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Coche micoche = new Coche();
+		
+		micoche.establece_color(JOptionPane.showInputDialog("Introduce color"));
+		
+		System.out.println(micoche.dime_datos_generales());
+		
+		System.out.println(micoche.dime_color());
+		
+		micoche.configurar_asientos(JOptionPane.showInputDialog("Introduce asientos"));
+		
+		System.out.println(micoche.dime_asientos());
+	}
+
+}
